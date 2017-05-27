@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { DOM } from 'react';
 import Image from './image.jsx'
 import TextBox from './textBox.jsx'
 
-const DOM = React.DOM;
-
-const BlogItem = ({post}) => (
+const BlogItem = ({ post }) => (
     DOM.div(
         null,
         React.createElement(Image, post),

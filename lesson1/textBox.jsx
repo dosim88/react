@@ -1,6 +1,4 @@
-import React from 'react';
-
-const DOM = React.DOM;
+import React, { DOM } from 'react';
 
 const TextBox = (props) => (
     DOM.span(null, props.children)
