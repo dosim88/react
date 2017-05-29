@@ -8,9 +8,9 @@ const BlogList = ({ posts }) => (
         null,
         _.map(
             posts,
-            (post, key) => (
-                React.createElement(BlogItem, {key: key, post: post})
-            )
+            (post) => {
+                return React.createElement(BlogItem, {key: post.id, post: post})
+            }
         )
     )
 )
