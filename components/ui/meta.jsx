@@ -1,22 +1,22 @@
 import React, { DOM } from 'react';
 
-const Meta = ({author, created_at, updated_at}) => (
-    DOM.span(
-        null,
-        `${author} Создано: ${created_at} Обновлено: ${updated_at}`
-    )
+const Meta = ({ author, createdAt, updatedAt }) => (
+  DOM.span(
+    null,
+    `${author} Создано: ${createdAt} Обновлено: ${updatedAt}`
+  )
 );
 
 Meta.defaultProps = {
-    author: '',
-    created_at: '',
-    updated_at: ''
+  author: '',
+  createdAt: '',
+  updatedAt: ''
 };
 
 Meta.propTypes = {
-    author: PropTypes.string,
-    created_at: PropTypes.string,
-    updated_at: PropTypes.string
+  author: PropTypes.string,
+  createdAt: PropTypes.string,
+  updatedAt: PropTypes.string
 };
 
 export default Meta;

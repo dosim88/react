@@ -5,23 +5,23 @@ import Meta from './meta.jsx'
 import Like from './like.jsx'
 
 const BlogItem = ({ post }) => {
-    return DOM.div(
-        null,
-        React.createElement(Image, post.image),
-        React.createElement('br'),
-        React.createElement(Meta, post.meta),
-        React.createElement('br'),
-        React.createElement(TextBox, null, post.text),
-        React.createElement(Like, { count: post.meta.likesCount })
-    )
-}
+  return DOM.div(
+    null,
+    React.createElement(Image, post.image),
+    React.createElement('br'),
+    React.createElement(Meta, post.meta),
+    React.createElement('br'),
+    React.createElement(TextBox, null, post.text),
+    React.createElement(Like, { count: post.meta.likesCount })
+  )
+};
 
 BlogItem.propTypes = {
-    post: PropTypes.shape({
-        image:  PropTypes.shape( Image.propTypes ),
-        meta: PropTypes.shape( Meta.propTypes ),
-        text: PropTypes.string
-    })
-}
+  post: PropTypes.shape({
+    image:  PropTypes.shape( Image.propTypes ),
+    meta: PropTypes.shape( Meta.propTypes ),
+    text: PropTypes.string
+  })
+};
 
 export default BlogItem;

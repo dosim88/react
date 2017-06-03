@@ -1,18 +1,18 @@
 import React, { DOM } from 'react';
 
 const TextBox = (props) => (
-    DOM.span(null, props.children)
+  DOM.span(null, props.children)
 );
 
 TextBox.defaultProps = {
-    children: ''
+  children: ''
 };
 
 TextBox.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.string
-    ])
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string
+  ])
 };
 
 export default TextBox;
