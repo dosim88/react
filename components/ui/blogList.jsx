@@ -3,8 +3,8 @@ import _ from 'lodash';
 
 import BlogItem from './blogItem.jsx';
 
-const BlogList = ({ posts }) => (
-    DOM.div(
+const BlogList = ({ posts }) => {
+    return DOM.div(
         null,
         _.map(
             posts,
@@ -13,6 +13,10 @@ const BlogList = ({ posts }) => (
             }
         )
     )
-)
+}
+
+BlogList.propTypes = {
+    posts: PropTypes.array
+}
 
 export default BlogList;
