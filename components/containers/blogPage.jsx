@@ -50,12 +50,20 @@ class BlogPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { posts };
+    this.handleLike = this.handleLike.bind(this);
+  }
+
+  handleLike(postId) {
+    const index = this.state.posts.findIndex(post => post.id == postId);
+    this.state.posts[index].meta.likesCount++;
+
+    this.setState( this.state.posts );
   }
 
   render() {
     const posts = this.state.posts;
-    return React.createElement(BlogList, { posts })
+    return React.createElement(BlogList, { posts: posts, handleLike: this.handleLike })
   }
-}
+};
 
 export default BlogPage;
