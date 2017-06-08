@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogList from '../ui/blogList.jsx';
+import PieChart from '../ui/pieChart.jsx';
 
 const posts = [
   {
@@ -14,7 +15,7 @@ const posts = [
       updatedAt: '2017-06-01',
       likesCount: 5
     },
-    text: 'some text'
+    text: 'post 1'
   },
   {
     id: 1,
@@ -28,7 +29,7 @@ const posts = [
       updatedAt: "2017-06-02",
       likesCount: 10
     },
-    text: 'some text',
+    text: 'post 2'
   },
   {
     id: 2,
@@ -42,7 +43,7 @@ const posts = [
       updatedAt: "2017-06-03",
       likesCount: 20
     },
-    text: 'some text'
+    text: 'post 3'
   }
 ];
 
@@ -61,8 +62,13 @@ class BlogPage extends React.Component {
   }
 
   render() {
-    const posts = this.state.posts;
-    return React.createElement(BlogList, { posts: posts, handleLike: this.handleLike })
+    return (
+      DOM.div(
+          null,
+          React.createElement(BlogList, { posts: this.state.posts, handleLike: this.handleLike }),
+          React.createElement(PieChart, {columns: this.state.posts.map( post => [ post.text, post.meta.likesCount ] )})
+      )
+    )
   }
 };
 
