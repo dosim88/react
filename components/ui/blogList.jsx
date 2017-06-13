@@ -9,7 +9,7 @@ const BlogList = ({ posts, handleLike }) => (
         _.map(
             posts,
             (post) => {
-              return React.createElement(BlogItem, { key: post.id, post: post, handleLike: handleLike })
+              return React.createElement(BlogItem, { key: post.id, post, handleLike })
             }
         )
     )

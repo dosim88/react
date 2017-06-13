@@ -56,9 +56,11 @@ class BlogPage extends React.Component {
 
   handleLike(postId) {
     const index = this.state.posts.findIndex(post => post.id == postId);
-    this.state.posts[index].meta.likesCount++;
+    const posts = JSON.parse(JSON.stringify(this.state.posts)); //clone of state.posts
 
-    this.setState( this.state.posts );
+    posts[index].meta.likesCount++;
+
+    this.setState({ posts: posts });
   }
 
   render() {

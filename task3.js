@@ -60,7 +60,8 @@ Image.defaultProps = {
   alt: '',
   style: {
     width: 300,
-    height: 200
+    height: 200,
+    display: 'block'
   }
 };
 
@@ -145,9 +146,7 @@ const BlogItem = ({ post, handleLike }) => {
   return DOM.div(
     null,
     React.createElement(Image, post.image),
-    React.createElement('br'),
     React.createElement(Meta, post.meta),
-    React.createElement('br'),
     React.createElement(TextBox, null, post.text),
     React.createElement(Like, {
       postId: post.id,
@@ -174,7 +173,7 @@ const BlogList = ({ posts, handleLike }) => (
     _.map(
       posts,
       (post) => {
-        return React.createElement(BlogItem, { key: post.id, post: post, handleLike: handleLike })
+        return React.createElement(BlogItem, { key: post.id, post, handleLike })
       }
     )
   )
@@ -225,9 +224,11 @@ class BlogPage extends React.Component {
 
   handleLike(postId) {
     const index = this.state.posts.findIndex(post => post.id == postId);
-    this.state.posts[index].meta.likesCount++;
+    const posts = JSON.parse(JSON.stringify(this.state.posts)); //clone of state.posts
 
-    this.setState( this.state.posts );
+    posts[index].meta.likesCount++;
+
+    this.setState({ posts: posts });
   }
 
   render() {

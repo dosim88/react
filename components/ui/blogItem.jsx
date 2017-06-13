@@ -8,9 +8,7 @@ const BlogItem = ({ post, handleLike }) => {
   return DOM.div(
       null,
       React.createElement(Image, post.image),
-      React.createElement('br'),
       React.createElement(Meta, post.meta),
-      React.createElement('br'),
       React.createElement(TextBox, null, post.text),
       React.createElement(Like, {
         postId: post.id,
