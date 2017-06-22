@@ -12,8 +12,9 @@ Image.defaultProps = {
   src: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/%D0%9D%D0%B5%D1%82_%D1%84%D0%BE%D1%82%D0%BE.png',
   alt: '',
   style: {
-    width: 150,
-    height: 100
+    width: 300,
+    height: 200,
+    display: 'block'
   }
 };
 
