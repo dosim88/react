@@ -1,20 +1,20 @@
-import React, { DOM } from 'react';
-import Image from './image.jsx'
-import TextBox from './textBox.jsx'
-import Meta from './meta.jsx'
-import Like from './like.jsx'
+import React, { DOM, PropTypes } from 'react';
+import Image from './image.jsx';
+import TextBox from './textBox.jsx';
+import Meta from './meta.jsx';
+import Like from './like.jsx';
 
 const BlogItem = ({ post, handleLike }) => {
   return DOM.div(
-      null,
-      React.createElement(Image, post.image),
-      React.createElement(Meta, post.meta),
-      React.createElement(TextBox, null, post.text),
-      React.createElement(Like, {
-        postId: post.id,
-        likesCount: post.meta.likesCount,
-        handleLike: handleLike
-      })
+    null,
+    React.createElement(Image, post.image),
+    React.createElement(Meta, post.meta),
+    React.createElement(TextBox, null, post.text),
+    React.createElement(Like, {
+      postId: post.id,
+      likesCount: post.meta.likesCount,
+      handleLike: handleLike
+    })
   )
 };
 

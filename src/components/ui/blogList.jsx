@@ -1,4 +1,4 @@
-import React, { DOM } from 'react';
+import React, { DOM, PropTypes } from 'react';
 import _ from 'lodash';
 
 import BlogItem from './blogItem.jsx';
