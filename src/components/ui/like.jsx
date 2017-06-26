@@ -1,18 +1,18 @@
 import React, { DOM, PropTypes } from 'react';
 
 const Like = ({ postId, likesCount, handleLike }) => (
+  DOM.div(
+    null,
+    React.createElement(
+      'button',
+      { onClick: () => handleLike(postId) },
+      'Like'
+    ),
     DOM.div(
-        null,
-        React.createElement(
-            'button',
-            { onClick: () => handleLike(postId) },
-            'Like'
-        ),
-        DOM.div(
-            null,
-            DOM.span(null, `Likes: ${likesCount}`)
-        )
+      null,
+      DOM.span(null, `Likes: ${likesCount}`)
     )
+  )
 );
 
 Like.defaultProps = {
