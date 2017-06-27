@@ -23,6 +23,17 @@ module.exports = {
         use: [ 'babel-loader' ],
         exclude: /node_modules/
       },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?importLoades=1'
+        ]
+      },
+      {
+        test: /\.(eot|png|ttf|svg|woff|woff2)$/,
+        loader: 'url-loader'
+      }
     ]
   },
 

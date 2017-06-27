@@ -5,8 +5,10 @@ import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
 
-const rootEl = document.getElementById('app');
+import '../bootstrap/css/bootstrap.min.css';
+import './css/style.css';
 
+const rootEl = document.getElementById('app');
 
 ReactDOM.render(
   <AppContainer>

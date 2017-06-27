@@ -1,16 +1,15 @@
 import React, { DOM, PropTypes } from 'react';
 
-const Like = ({ postId, likesCount, handleLike }) => (
+const Like = ({ postId, handleLike }) => (
   DOM.div(
     null,
     React.createElement(
       'button',
-      { onClick: () => handleLike(postId) },
+      {
+        className: 'btn btn-primary',
+        onClick: () => handleLike(postId)
+      },
       'Like'
-    ),
-    DOM.div(
-      null,
-      DOM.span(null, `Likes: ${likesCount}`)
     )
   )
 );

@@ -14,7 +14,7 @@ class BlogPage extends React.Component {
 
   handleLike(postId) {
     const index = this.state.posts.findIndex(post => post.id == postId);
-    const posts = JSON.parse(JSON.stringify(this.state.posts)); //clone of state.posts
+    const posts = JSON.parse(JSON.stringify(this.state.posts));
 
     posts[index].meta.likesCount++;
 
@@ -24,9 +24,19 @@ class BlogPage extends React.Component {
   render() {
     return (
       DOM.div(
-        null,
-        React.createElement(BlogList, { posts: this.state.posts, handleLike: this.handleLike }),
-        React.createElement(PieChart, {columns: this.state.posts.map( post => [ post.text, post.meta.likesCount ] )})
+        {
+          className: 'container'
+        },
+        DOM.div(
+          null,
+          React.createElement(BlogList, {
+            posts: this.state.posts,
+            handleLike: this.handleLike
+          }),
+          React.createElement(PieChart, {
+            columns: this.state.posts.map( post => [ post.text, post.meta.likesCount ] )
+          })
+        )
       )
     );
   }

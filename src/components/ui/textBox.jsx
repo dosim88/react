@@ -1,7 +1,7 @@
 import React, { DOM, PropTypes } from 'react';
 
 const TextBox = (props) => (
-  DOM.span(null, props.children)
+  DOM.p({ className: 'text-center' }, <b>{props.children}</b>)
 );
 
 TextBox.defaultProps = {

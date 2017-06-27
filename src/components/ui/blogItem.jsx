@@ -6,16 +6,18 @@ import Like from './like.jsx';
 
 const BlogItem = ({ post, handleLike }) => {
   return DOM.div(
-    null,
+    {
+      className: 'row blog-item text-center'
+    },
     React.createElement(Image, post.image),
-    React.createElement(Meta, post.meta),
     React.createElement(TextBox, null, post.text),
+    React.createElement(Meta, post.meta),
     React.createElement(Like, {
       postId: post.id,
       likesCount: post.meta.likesCount,
       handleLike: handleLike
     })
-  )
+  );
 };
 
 BlogItem.propTypes = {
