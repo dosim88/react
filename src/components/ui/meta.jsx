@@ -11,15 +11,17 @@ const Meta = ({ author, createdAt, updatedAt, likesCount }) => (
 );
 
 Meta.defaultProps = {
-  author: '',
-  createdAt: '',
-  updatedAt: ''
+  author: 'нет данных',
+  createdAt: 'нет данных',
+  updatedAt: 'нет данных',
+  likesCount: 0
 };
 
 Meta.propTypes = {
   author: PropTypes.string,
   createdAt: PropTypes.string,
-  updatedAt: PropTypes.string
+  updatedAt: PropTypes.string,
+  likesCount: PropTypes.number
 };
 
 export default Meta;

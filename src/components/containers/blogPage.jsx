@@ -2,6 +2,7 @@ import React from 'react';
 import BlogList from '../ui/blogList.jsx';
 import PieChart from '../ui/pieChart.jsx';
 import { posts } from '../constants/items';
+import _ from 'lodash';
 
 const { DOM } = React;
 
@@ -9,12 +10,12 @@ class BlogPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { posts };
-    this.handleLike = this.handleLike.bind(this);
+    this.handleLike = _.bind(this.handleLike, this);
   }
 
   handleLike(postId) {
-    const index = this.state.posts.findIndex(post => post.id == postId);
-    const posts = JSON.parse(JSON.stringify(this.state.posts));
+    const posts = _.cloneDeep(this.state.posts);
+    const index = _.findIndex(posts, post => post.id == postId);
 
     posts[index].meta.likesCount++;
 

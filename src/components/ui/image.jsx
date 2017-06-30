@@ -1,10 +1,10 @@
 import React, { DOM, PropTypes } from 'react';
 
-const Image = (props) => (
+const Image = ({ src, alt }) => (
   DOM.img({
     className: 'center-block',
-    src: props.src,
-    alt: props.text
+    src: src,
+    alt: alt
   })
 );
 
