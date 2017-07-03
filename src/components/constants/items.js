@@ -2,7 +2,8 @@ export const posts = [
   {
     id: 0,
     image: {
-      src: 'http://fotointeres.ru/wp-content/uploads/2016/09/0003a709_medium-720x479.jpg',
+      src: 'http://fotointeres.ru/wp-content/uploads/2016/09/' +
+            '0003a709_medium-720x479.jpg',
       alt: 'some alt text',
     },
     meta: {
@@ -16,7 +17,8 @@ export const posts = [
   {
     id: 1,
     image: {
-      src: 'http://www.vmersine.com/wp-content/uploads/2015/05/zabavnye_givotnye_dlya_horoshego_nastroeniya_foto_11-700x380.jpg',
+      src: 'http://www.vmersine.com/wp-content/uploads/2015/05/' +
+            'zabavnye_givotnye_dlya_horoshego_nastroeniya_foto_11-700x380.jpg',
       alt: 'some alt text',
     },
     meta: {

@@ -1,4 +1,4 @@
-import React, { DOM, PropTypes } from 'react';
+import { DOM, PropTypes } from 'react';
 
 const Meta = ({ author, createdAt, updatedAt, likesCount }) => (
   DOM.ul(

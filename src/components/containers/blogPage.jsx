@@ -19,7 +19,7 @@ class BlogPage extends React.Component {
 
     posts[index].meta.likesCount++;
 
-    this.setState({ posts: posts });
+    this.setState({ posts });
   }
 
   render() {
@@ -35,7 +35,9 @@ class BlogPage extends React.Component {
             handleLike: this.handleLike
           }),
           React.createElement(PieChart, {
-            columns: this.state.posts.map( post => [ post.text, post.meta.likesCount ] )
+            columns: this.state.posts.map(
+              post => [ post.text, post.meta.likesCount ]
+            )
           })
         )
       )

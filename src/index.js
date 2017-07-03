@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
 
+import '../node_modules/c3/c3.min.css';
 import '../bootstrap/css/bootstrap.min.css';
 import './css/style.css';
 
@@ -17,7 +18,7 @@ ReactDOM.render(
   rootEl
 );
 
-if(module.hot) {
+if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
 
