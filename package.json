@@ -1,0 +1,44 @@
+{
+  "name": "myReact",
+  "version": "1.0.0",
+  "description": "React. Базовый уровень. Thinknetica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosim88/react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dosim88/react/issues"
+  },
+  "homepage": "https://github.com/dosim88/react#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.0.0",
+    "eslint-plugin-destructuring": "^2.1.0",
+    "eslint-plugin-import": "^2.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "file-loader": "^0.11.2",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "c3": "^0.4.14",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
