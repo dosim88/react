@@ -1,15 +1,16 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Image from './image.jsx';
 import TextBox from './textBox.jsx';
 import Meta from './meta.jsx';
 import Like from './like.jsx';
 
-const BlogItem = ({ post, handleLike }) => DOM.div(
-  { className: 'row blog-item text-center' },
-  React.createElement(Image, post.image),
-  React.createElement(TextBox, null, post.text),
-  React.createElement(Meta, post.meta),
-  React.createElement(Like, { handleLike })
+const BlogItem = ({ post, handleLike }) => (
+  <div className='row blog-item text-center'>
+    <Image {...post.image} />
+    <TextBox>{post.text}</TextBox>
+    <Meta {...post.meta} />
+    <Like {...{handleLike}} />
+  </div>
 );
 
 BlogItem.propTypes = {

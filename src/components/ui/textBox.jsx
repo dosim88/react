@@ -1,7 +1,9 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const TextBox = (props) => (
-  DOM.p({ className: 'text-center' }, <b>{props.children}</b>)
+  <p className='text-center'>
+    <b>{props.children}</b>
+  </p>
 );
 
 TextBox.defaultProps = {

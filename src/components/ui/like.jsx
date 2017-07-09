@@ -1,17 +1,11 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const Like = ({ handleLike }) => (
-  DOM.div(
-    null,
-    React.createElement(
-      'button',
-      {
-        className: 'btn btn-primary',
-        onClick: () => handleLike()
-      },
-      'Like'
-    )
-  )
+  <div>
+    <button className='btn btn-primary' onClick={ () => handleLike() }>
+      Like
+    </button>
+  </div>
 );
 
 Like.propTypes = {

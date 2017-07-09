@@ -4,8 +4,6 @@ import PieChart from '../ui/pieChart.jsx';
 import { posts } from '../constants/items';
 import _ from 'lodash';
 
-const { DOM } = React;
-
 class BlogPage extends React.Component {
   constructor(props) {
     super(props);
@@ -24,23 +22,14 @@ class BlogPage extends React.Component {
 
   render() {
     return (
-      DOM.div(
-        {
-          className: 'container'
-        },
-        DOM.div(
-          null,
-          React.createElement(BlogList, {
-            posts: this.state.posts,
-            handleLike: this.handleLike
-          }),
-          React.createElement(PieChart, {
-            columns: this.state.posts.map(
-              post => [ post.text, post.meta.likesCount ]
-            )
-          })
-        )
-      )
+      <div className="container">
+        <div>
+          <BlogList posts={this.state.posts} handleLike={this.handleLike}/>
+          <PieChart columns={this.state.posts.map(
+            post => [ post.text, post.meta.likesCount ]
+          )} />
+        </div>
+      </div>
     );
   }
 }

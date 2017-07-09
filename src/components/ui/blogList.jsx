@@ -1,22 +1,20 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
 import BlogItem from './blogItem.jsx';
 
 const BlogList = ({ posts, handleLike }) => (
-  DOM.div(
-    null,
-    _.map(
-      posts,
-      (post) => (
-        React.createElement(BlogItem, {
-          key: post.id,
-          post,
-          handleLike: () => handleLike(post.id)
-        })
-      )
-    )
-  )
+  <div>
+    {
+      _.map(posts, (post) => (
+        <BlogItem
+          key={post.id}
+          post={post}
+          handleLike={ () => handleLike(post.id) }
+        />
+      ))
+    }
+  </div>
 );
 
 BlogList.propTypes = {

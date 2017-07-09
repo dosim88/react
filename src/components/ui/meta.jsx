@@ -1,13 +1,12 @@
-import { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const Meta = ({ author, createdAt, updatedAt, likesCount }) => (
-  DOM.ul(
-    { className: 'list-group center-block',  },
-    DOM.li({ className: 'list-group-item' }, `Автор: ${author}`),
-    DOM.li({ className: 'list-group-item' }, `Создано: ${createdAt}`),
-    DOM.li({ className: 'list-group-item' }, `Обновлено: ${updatedAt}`),
-    DOM.li({ className: 'list-group-item' }, `Понравилось: ${likesCount}`)
-  )
+  <ul className='list-group center-block'>
+    <li className='list-group-item'>{`Автор: ${author}`}</li>
+    <li className='list-group-item'>{`Создано: ${createdAt}`}</li>
+    <li className='list-group-item'>{`Обновлено: ${updatedAt}`}</li>
+    <li className='list-group-item'>{`Понравилось: ${likesCount}`}</li>
+  </ul>
 );
 
 Meta.defaultProps = {
