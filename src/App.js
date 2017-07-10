@@ -1,8 +1,14 @@
 import React from 'react';
-import BlogPage from 'components/containers/blogPage.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import Routers from 'routes';
+import MainLayout from 'components/layouts/mainLayout';
 
 const App = () => (
-  <BlogPage />
+  <BrowserRouter>
+    <MainLayout>
+      <Routers />
+    </MainLayout>
+  </BrowserRouter>
 );
 
 export default App;
