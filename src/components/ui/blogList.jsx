@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-import BlogItem from './blogItem.jsx';
+import BlogItem from 'components/ui/blogItem';
 
 const BlogList = ({ posts, handleLike }) => (
   <div>

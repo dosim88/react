@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 
-import Image from './image.jsx';
-import TextBox from './textBox.jsx';
-import Meta from './meta.jsx';
-import Like from './like.jsx';
+import Image from 'components/ui/image';
+import TextBox from 'components/ui/textBox';
+import Meta from 'components/ui/meta';
+import Like from 'components/ui/like';
 
-import { postsPath } from '../../helpers/routes.js';
+import { postsPath } from 'helpers/routes';
 
 const BlogItem = ({ post, handleLike }) => (
   <div className='row blog-item text-center'>

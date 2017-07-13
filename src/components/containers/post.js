@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import BlogItem from '../ui/blogItem.jsx';
+import BlogItem from 'components/ui/blogItem';
 import request from 'superagent';
-import { API_PATH } from '../../constants/config.js';
+import { API_PATH } from 'constants/config';
 
 class Post extends React.Component {
   constructor(props) {

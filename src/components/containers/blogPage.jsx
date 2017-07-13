@@ -6,7 +6,7 @@ import PieChart from '../ui/pieChart.jsx';
 import _ from 'lodash';
 import request from 'superagent';
 
-import { API_PATH } from '../../constants/config.js';
+import { API_PATH } from 'constants/config';
 
 class BlogPage extends React.Component {
   constructor(props) {
