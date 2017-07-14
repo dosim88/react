@@ -6,13 +6,13 @@ import TextBox from 'components/ui/textBox';
 import Meta from 'components/ui/meta';
 import Like from 'components/ui/like';
 
-import { postsPath } from 'helpers/routes';
+import { posts } from 'helpers/routes';
 
 const BlogItem = ({ post, handleLike }) => (
   <div className='row blog-item text-center'>
     <Image {...post.image} />
     <TextBox>
-      <Link to={postsPath(post.id)}>{post.text}</Link>
+      <Link to={posts(post.id)}>{post.text}</Link>
     </TextBox>
     <Meta {...post.meta} />
     <Like {...{handleLike}} />

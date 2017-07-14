@@ -20,7 +20,7 @@ class Post extends React.Component {
       `${API_PATH}/posts/${id}`,
       {},
       (err, res) => {
-        if(!err)
+        if (!err)
           this.setState({post: res.body});
       }
     );
