@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import { API_PATH } from 'constants/config';
 
 const Image = ({ src, alt }) => (
-  <img className='center-block' src={src} alt={alt} />
+  <img className='center-block' src={API_PATH + src} alt={alt} />
 );
 
 Image.defaultProps = {
