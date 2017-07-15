@@ -20,20 +20,27 @@ class BlogPage extends React.Component {
   }
 
   fetchPosts() {
-    request.get(
-      API_PATH,
-      {},
-      (err, res) => this.setState({ posts: res.body })
-    );
+    request
+      .get(API_PATH)
+      .end((err, res) => {
+        if (!err && res.ok)
+          this.setState({ posts: res.body });
+      });
   }
 
   handleLike(postId) {
-    const posts = _.cloneDeep(this.state.posts);
-    const index = _.findIndex(posts, post => post.id == postId);
+    request
+      .put(`${API_PATH}/posts/${postId}/like`)
+      .end((err, res) => {
+        if (!err && res.ok) {
+          const posts = _.cloneDeep(this.state.posts);
+          const index = _.findIndex(posts, post => post.id == postId);
 
-    posts[index].meta.likesCount++;
+          posts[index] = res.body;
 
-    this.setState({ posts });
+          this.setState({ posts: posts });
+        }
+      });
   }
 
   render() {
