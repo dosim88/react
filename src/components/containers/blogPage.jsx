@@ -59,16 +59,24 @@ class BlogPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <div>
-          <BlogList posts={this.state.postsOnPage} handleLike={this.handleLike}/>
+        <div className="row">
+          <div className="col-md-6">
+            <BlogList posts={this.state.postsOnPage} handleLike={this.handleLike}/>
+          </div>
+
+          <div className="col-md-6">
+            <PieChart columns={this.state.posts.map(
+              post => [ post.text, post.meta.likesCount ]
+            )} />
+          </div>
+        </div>
+
+        <div className="row">
           <Pagination
             items={this.state.posts}
             onChangePage={this.onChangePage}
             currentPage={this.state.page}
           />
-          <PieChart columns={this.state.posts.map(
-            post => [ post.text, post.meta.likesCount ]
-          )} />
         </div>
       </div>
     );

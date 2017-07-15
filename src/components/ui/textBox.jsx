@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
 const TextBox = (props) => (
-  <p className='text-center'>
+  <div className='post-title text-center'>
     <b>{props.children}</b>
-  </p>
+  </div>
 );
 
 TextBox.defaultProps = {

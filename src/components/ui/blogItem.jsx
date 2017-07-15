@@ -9,13 +9,26 @@ import Like from 'components/ui/like';
 import { posts } from 'helpers/routes';
 
 const BlogItem = ({ post, handleLike }) => (
-  <div className='row blog-item text-center'>
-    <Image {...post.image} />
-    <TextBox>
-      <Link to={posts(post.id)}>{post.text}</Link>
-    </TextBox>
-    <Meta {...post.meta} />
-    <Like {...{handleLike}} />
+  <div className='blog-item text-center'>
+    <div className="row">
+      <TextBox>
+        <Link to={posts(post.id)}>{post.text}</Link>
+      </TextBox>
+    </div>
+
+    <div className="row">
+      <div className="col-md-6">
+        <Image {...post.image} />
+      </div>
+
+      <div className="col-md-6">
+        <Meta {...post.meta} />
+      </div>
+    </div>
+
+    <div className="row">
+      <Like {...{handleLike}} />
+    </div>
   </div>
 );
 
