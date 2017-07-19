@@ -27,7 +27,7 @@ module.exports = {
         test: /\.css$/,
         loaders: [
           'style-loader',
-          'css-loader?importLoades=1'
+          'css-loader?importLoaders=1'
         ]
       },
       {
@@ -48,5 +48,7 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+
+  devtool: "source-map"
 };
