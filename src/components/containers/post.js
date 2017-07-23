@@ -41,6 +41,8 @@ class Post extends React.Component {
     const { id } = this.props.match.params;
     const { post } = this.state;
 
+    //return {post && <BlogItem key={id} post={post} handleLike={ () => this.handleLike(id) }/>}
+
     return post
       ? <BlogItem key={id} post={post} handleLike={ () => this.handleLike(id) }/>
       : null;
