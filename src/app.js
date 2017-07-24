@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter } from 'react-router-dom';
 import routes from 'routes';
 
 import MainLayout from 'components/layouts/mainLayout';
@@ -19,6 +18,9 @@ import _ from 'lodash';
 
 import { Route, Switch } from 'react-router-dom';
 
+import { ConnectedRouter } from 'react-router-redux';
+
+
 function historyCb(location) {
   _.map(
     routes,
@@ -34,7 +36,7 @@ function historyCb(location) {
   );
 }
 
-browserHistory.listen((location) => {
+browserHistory.listen((location, action) => {
   historyCb(location);
 });
 
@@ -42,7 +44,7 @@ historyCb(window.location);
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={browserHistory}>
       <MainLayout>
         <Switch>
           {
@@ -57,7 +59,7 @@ const App = () => (
           }
         </Switch>
       </MainLayout>
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>
 );
 
