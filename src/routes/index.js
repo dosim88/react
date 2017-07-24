@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Route, Switch } from 'react-router-dom';
-
 //import BlogPage from 'components/containers/blogPage';
 //import Post from 'components/containers/post';
 //import About from 'components/containers/about';
@@ -16,28 +14,19 @@ import { fetchPosts } from 'actions/posts';
 import { fetchPost } from 'actions/post';
 
 
-const Routers = () => (
-  <Switch>
-    <Route
-      exact path='/'
-      component={PostsContainer}
-      prepareData={
-        (store) => {
-          store.dispatch(fetchPosts);
-        }
-      }
-    />
-    <Route
-      path={posts()}
-      component={PostContainer}
-      prepareData={
-        (store, query, params) => {
-          store.dispatch(fetchPost(params.id));
-        }
-      }
-    />
-    //<Route path={about} component={About} />
-  </Switch>
-);
-
-export default Routers;
+export default [
+  {
+    path: '/',
+    component: PostsContainer,
+    prepareData: (store) => {
+      store.dispatch(fetchPosts());
+    }
+  },
+  {
+    path: posts(),
+    component: PostContainer,
+    prepareData: (store, query, params) => {
+      store.dispatch(fetchPost(params.id));
+    }
+  }
+];

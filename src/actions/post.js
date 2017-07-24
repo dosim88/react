@@ -25,7 +25,7 @@ export function fetchPost(id) {
     return request
       .get(`${API_PATH}/posts/${id}`)
       .end((err, response) => {
-        err ? dispatch(errorPost()) : dispatch(receivePost(response));
+        err ? dispatch(errorPost()) : dispatch(receivePost(response.body));
       });
   };
 }

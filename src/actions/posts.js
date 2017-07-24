@@ -24,7 +24,7 @@ export function fetchPosts() {
     return request
       .get(`${API_PATH}/`)
       .end((err, response) => {
-        err ? dispatch(errorPosts()) : dispatch(receivePosts(response));
+        err ? dispatch(errorPosts()) : dispatch(receivePosts(response.body));
       });
-  }
+  };
 }
