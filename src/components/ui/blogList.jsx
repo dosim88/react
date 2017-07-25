@@ -3,8 +3,9 @@ import _ from 'lodash';
 
 import BlogItem from 'components/ui/blogItem';
 
-const BlogList = ({ posts, handleLike }) => (
-  <div>
+const BlogList = ({ posts, handleLike }) => {
+
+  return <div>
     {
       _.map(posts, (post) => (
         <BlogItem
@@ -14,8 +15,8 @@ const BlogList = ({ posts, handleLike }) => (
         />
       ))
     }
-  </div>
-);
+  </div>;
+};
 
 BlogList.propTypes = {
   posts: PropTypes.array,

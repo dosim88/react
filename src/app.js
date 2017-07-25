@@ -27,8 +27,8 @@ function historyCb(location) {
     route => {
       const match = matchPath(location.pathname, route);
 
-      if (match) {
-        const state = { location, params: match.params, routes };
+      if (match && match.isExact) {
+        const state = { location, params: match.params, route };
 
         return prepareData(store, state);
       }
@@ -36,7 +36,7 @@ function historyCb(location) {
   );
 }
 
-browserHistory.listen((location, action) => {
+browserHistory.listen((location) => {
   historyCb(location);
 });
 
@@ -51,6 +51,7 @@ const App = () => (
             routes.map((route, i) => (
               <Route
                 key={i}
+                exact={route.exact}
                 path={route.path}
                 component={route.component}
                 prepareData={route.prepareData || null}

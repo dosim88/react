@@ -1,7 +1,5 @@
 import React from 'react';
 
-//import BlogPage from 'components/containers/blogPage';
-//import Post from 'components/containers/post';
 //import About from 'components/containers/about';
 
 import PostsContainer from 'containers/postsContainer';
@@ -16,6 +14,7 @@ import { fetchPost } from 'actions/post';
 
 export default [
   {
+    exact: true,
     path: '/',
     component: PostsContainer,
     prepareData: (store) => {
@@ -30,3 +29,4 @@ export default [
     }
   }
 ];
+
