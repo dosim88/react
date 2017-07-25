@@ -1,5 +1,3 @@
-import React from 'react';
-
 import PostsContainer from 'components/containers/postsContainer';
 import PostContainer from 'components/containers/postContainer';
 

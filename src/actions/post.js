@@ -40,11 +40,11 @@ export function fetchPost(id) {
 }
 
 export function postLike(id) {
-  return (dispatch) => {
-    return request
+  return (dispatch) => (
+    request
       .put(`${API_PATH}/posts/${id}/like`)
       .end((err, response) => {
         err ? dispatch(errorLike()) : dispatch(successLike(response.body));
-      });
-  };
+      })
+  );
 }

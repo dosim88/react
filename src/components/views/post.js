@@ -1,19 +1,18 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
 
 import BlogItem from 'components/views/blogItem';
 
 
-const Post = ({ post, handleLike }) => {
-
-  return post
+const Post = ({ post, handleLike }) => (
+  post
     ? <BlogItem key={post.id} post={post} handleLike={ () => handleLike(post.id) } />
-    : null;
-};
+    : null
+);
 
 
 Post.propTypes = {
-  match: PropTypes.object
+  post: PropTypes.object,
+  handleLike: PropTypes.func
 };
 
 export default Post;

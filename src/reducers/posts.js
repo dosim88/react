@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case types.FETCH_POSTS_REQUEST:
       return assign({}, initialState, { isFetching: true });
     case types.FETCH_POSTS_ERROR:

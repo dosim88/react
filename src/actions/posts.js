@@ -40,8 +40,8 @@ export function fetchPosts() {
 }
 
 export function postsLike(id, posts) {
-  return (dispatch) => {
-    return request
+  return (dispatch) => (
+    request
       .put(`${API_PATH}/posts/${id}/like`)
       .end((err, response) => {
         const entries = _.cloneDeep(posts);
@@ -50,6 +50,6 @@ export function postsLike(id, posts) {
         entries[index] = response.body;
 
         err ? dispatch(errorLike()) : dispatch(successLike(entries));
-      });
-  };
+      })
+  );
 }
