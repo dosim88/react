@@ -4,11 +4,10 @@ import _ from 'lodash';
 import BlogItem from 'components/views/blogItem';
 
 
-const Post = ({ post, match }) => {
-  const id = match.params.id;
+const Post = ({ post, handleLike }) => {
 
   return post
-    ? <BlogItem key={id} post={post} />
+    ? <BlogItem key={post.id} post={post} handleLike={ () => handleLike(post.id) } />
     : null;
 };
 
