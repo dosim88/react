@@ -1,12 +1,11 @@
 import React from 'react';
 
-//import About from 'components/containers/about';
+import PostsContainer from 'components/containers/postsContainer';
+import PostContainer from 'components/containers/postContainer';
 
-import PostsContainer from 'containers/postsContainer';
-import PostContainer from 'containers/postContainer';
+import About from 'components/views/about';
 
-
-import { posts, about } from 'helpers/routes';
+import { index, posts, about } from 'helpers/routes';
 
 import { fetchPosts } from 'actions/posts';
 import { fetchPost } from 'actions/post';
@@ -15,7 +14,7 @@ import { fetchPost } from 'actions/post';
 export default [
   {
     exact: true,
-    path: '/',
+    path: index,
     component: PostsContainer,
     prepareData: (store) => {
       store.dispatch(fetchPosts());
@@ -27,6 +26,10 @@ export default [
     prepareData: (store, query, params) => {
       store.dispatch(fetchPost(params.id));
     }
-  }
+  },
+  {
+    path: about(),
+    component: About,
+  },
 ];
 

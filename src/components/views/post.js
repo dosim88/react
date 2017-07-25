@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-import BlogItem from 'components/ui/blogItem';
+import BlogItem from 'components/views/blogItem';
 
 
 const Post = ({ post, match }) => {

@@ -5,5 +5,6 @@ export default function(store, state) {
 
   const query = parse(location.search.substr(1));
 
-  route.prepareData(store, query, params, location);
+  if(route.prepareData)
+    route.prepareData(store, query, params, location);
 }

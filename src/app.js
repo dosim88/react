@@ -1,24 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import routes from 'routes';
-
-import MainLayout from 'components/layouts/mainLayout';
-import { Provider } from 'react-redux';
-import store from 'store';
-import prepareData from 'helpers/prepareData';
-
-import DevTools from 'containers/devTools';
-
-import { matchPath } from 'react-router';
-
-import browserHistory from 'helpers/browserHistory';
-
 import _ from 'lodash';
 
+import { Provider } from 'react-redux';
+import { matchPath } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
-
 import { ConnectedRouter } from 'react-router-redux';
+
+import store from 'store';
+import MainLayout from 'components/layouts/mainLayout';
+import routes from 'routes';
+import prepareData from 'helpers/prepareData';
+import DevTools from 'components/containers/devTools';
+import browserHistory from 'helpers/browserHistory';
 
 
 function historyCb(location) {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Post from 'components/containers/post';
+import Post from 'components/views/post';
 
 const stateToProps = (state) => ({
   post: state.post.entry,
