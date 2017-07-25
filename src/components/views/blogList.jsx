@@ -13,7 +13,7 @@ const BlogList = ({ posts, handleLike }) => (
             <BlogItem
               key={post.id}
               post={post}
-              //handleLike={ () => handleLike(post.id) }
+              handleLike={ () => handleLike(post.id, posts) }
             />
           ))
         }
