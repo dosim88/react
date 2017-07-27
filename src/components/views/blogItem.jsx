@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
+import browserHistory from 'helpers/browserHistory';
 
 import Image from 'components/ui/image';
 import TextBox from 'components/ui/textBox';
@@ -12,7 +13,11 @@ const BlogItem = ({ post, handleLike }) => (
   <div className='blog-item text-center'>
     <div className="row">
       <TextBox>
-        <Link to={posts(post.id)}>{post.text}</Link>
+        {
+          browserHistory.location.pathname == posts(post.id)
+            ? <div>{post.text}</div>
+            : <Link to={posts(post.id)}> {post.text} </Link>
+        }
       </TextBox>
     </div>
 

@@ -1,20 +1,33 @@
-import React from 'react';
+import PostsContainer from 'components/containers/postsContainer';
+import PostContainer from 'components/containers/postContainer';
 
-import { Route, Switch } from 'react-router-dom';
+import About from 'components/views/about';
 
-import BlogPage from 'components/containers/blogPage';
-import Post from 'components/containers/post';
-import About from 'components/containers/about';
+import { index, posts, about } from 'helpers/routes';
 
-import { posts, about } from 'helpers/routes';
+import { fetchPosts } from 'actions/posts';
+import { fetchPost } from 'actions/post';
 
 
-const Routers = () => (
-  <Switch>
-    <Route exact path='/' component={BlogPage} />
-    <Route path={posts()} component={Post} />
-    <Route path={about} component={About} />
-  </Switch>
-);
+export default [
+  {
+    exact: true,
+    path: index,
+    component: PostsContainer,
+    prepareData: (store) => {
+      store.dispatch(fetchPosts());
+    }
+  },
+  {
+    path: posts(),
+    component: PostContainer,
+    prepareData: (store, query, params) => {
+      store.dispatch(fetchPost(params.id));
+    }
+  },
+  {
+    path: about(),
+    component: About,
+  },
+];
 
-export default Routers;
