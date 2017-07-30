@@ -36,6 +36,9 @@ const BlogList = ({ posts, postsOnPage, currentPage, changePage, handleLike }) =
 
 BlogList.propTypes = {
   posts: PropTypes.array,
+  postsOnPage: PropTypes.array,
+  currentPage: PropTypes.number,
+  changePage: PropTypes.func,
   handleLike: PropTypes.func
 };
 
