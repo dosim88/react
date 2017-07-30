@@ -10,8 +10,8 @@ const stateToProps = (state) => ({
 });
 
 const actionsToProps = (dispatch) => ({
-  handleLike(postId, posts) {
-    dispatch(postsLike(postId, posts));
+  handleLike(postId) {
+    dispatch(postsLike(postId));
   }
 });
 
