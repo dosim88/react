@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import BlogList from 'components/views/blogList';
 import { postsLike, changePage } from 'actions/posts';
 
-import { POSTS_ON_PAGE } from 'constants/config';
+import { POSTS_ON_PAGE } from 'constants/pagination';
 
 function filterPostsByPage(posts, currentPage = 1) {
   const firstIndex = (currentPage - 1) * POSTS_ON_PAGE;

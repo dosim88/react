@@ -24,7 +24,6 @@ export default function(state = initialState, action) {
     case types.POSTS_LIKE_SUCCESS: {
       const entries = _.cloneDeep(state.entries);
       const { id } = action.response;
-
       const index = _.findIndex(entries, entry => entry.id == id);
 
       entries[index] = action.response;

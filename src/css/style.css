@@ -40,3 +40,7 @@
   padding: 5px;
   text-align: center;
 }
+
+#app .pagination li {
+  cursor: pointer;
+}
