@@ -5,18 +5,24 @@ import * as types from 'constants/actionTypes/postsActionTypes';
 
 import { API_PATH } from 'constants/config';
 
-const requestPosts = () => ({
-  type: types.FETCH_POSTS_REQUEST
-});
+import { API_CALL } from 'middleware/API';
 
-const receivePosts = (response) => ({
-  type: types.FETCH_POSTS_SUCCESS,
-  response
-});
+import { index } from 'helpers/routes';
 
-const errorPosts = () => ({
-  type: types.FETCH_POSTS_ERROR
-});
+export function fetchPosts() {
+  return {
+    [API_CALL]: {
+      endpoint: index,
+      method: 'GET',
+      query: {},
+      types: [
+        types.FETCH_POSTS_REQUEST,
+        types.FETCH_POSTS_SUCCESS,
+        types.FETCH_POSTS_ERROR
+      ]
+    }
+  };
+}
 
 const successLike = (response) => ({
   type: types.POSTS_LIKE_SUCCESS,
@@ -26,18 +32,6 @@ const successLike = (response) => ({
 const errorLike = () => ({
   type: types.POSTS_LIKE_ERROR
 });
-
-export function fetchPosts() {
-  return (dispatch) => {
-    dispatch(requestPosts());
-
-    return request
-      .get(`${API_PATH}/`)
-      .end((err, response) => {
-        err ? dispatch(errorPosts()) : dispatch(receivePosts(response.body));
-      });
-  };
-}
 
 export function postsLike(id, posts) {
   return (dispatch) => (
