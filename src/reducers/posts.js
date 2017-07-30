@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
       return assign({}, initialState, { entries: action.response });
     case types.POSTS_LIKE_ERROR:
       return assign({}, initialState, { error: true });
-    case types.POSTS_LIKE_SUCCESS:
+    case types.POSTS_LIKE_SUCCESS: {
       const entries = _.cloneDeep(state.entries);
       const { id } = action.response;
 
@@ -29,7 +29,8 @@ export default function(state = initialState, action) {
 
       entries[index] = action.response;
 
-      return assign({}, initialState, { entries });
+      return assign({}, initialState, {entries});
+    }
     default:
       return state;
   }

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import request from 'superagent';
 
 import _ from 'lodash';
@@ -52,4 +54,4 @@ export default store => next => action => {
   );
 
   return promise; // store.dispatch(action) => promise
-}
+};
