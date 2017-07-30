@@ -4,27 +4,12 @@ import _ from 'lodash';
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pager: {} };
-  }
-
-  componentWillMount() {
-    // set page if items array isn't empty
-    if (this.props.items && this.props.items.length)
-      this.setPage(this.props.currentPage);
-  }
-
-  componentDidUpdate(prevProps) {
-    const items = this.props.items;
-    const prevItems = prevProps.items;
-
-    // reset page if items array has changed
-    if (items[0] !== prevItems[0] || items.length !== prevItems.length)
-      this.setPage(this.props.currentPage);
+    this.pager = {};
   }
 
   setPage(page) {
     const items = this.props.items;
-    let pager = this.state.pager;
+    let pager = this.pager;
 
     if (page < 1 || page > pager.totalPages) return;
 
@@ -35,11 +20,7 @@ class Pagination extends React.Component {
     pager.itemsOnPage = items.slice(pager.startIndex, pager.endIndex + 1);
     pager.page = page;
 
-    // update state
-    this.setState({ pager });
-
-    // call change page function in parent component
-    this.props.onChangePage(pager);
+    return pager;
   }
 
   getPager(totalItems, currentPage, pageSize) {
@@ -93,32 +74,31 @@ class Pagination extends React.Component {
   }
 
   render() {
-    const pager = this.state.pager;
+    const pager = this.setPage(this.props.currentPage);
 
-    if (!pager.pages || pager.pages.length <= 1) {
-      // don't display pager if there is only 1 page
-      return null;
-    }
+    if (!pager.pages) return null;
 
     return (
       <div className="text-center">
         <ul className="pagination">
           <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-            <a onClick={() => this.setPage(1)}>First</a>
+            <a onClick={() => this.props.changePage(1)}>First</a>
           </li>
           <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-            <a onClick={() => this.setPage(pager.currentPage - 1)}>Previous</a>
+            <a onClick={() => this.props.changePage(pager.currentPage - 1)}>Previous</a>
           </li>
-          {pager.pages.map((page, index) =>
-            <li key={index} className={pager.currentPage === page ? 'active' : ''}>
-              <a onClick={() => this.setPage(page)}>{page}</a>
-            </li>
-          )}
+          {
+            pager.pages.map((page, index) =>
+              <li key={index} className={pager.currentPage === page ? 'active' : ''}>
+                <a onClick={() => this.props.changePage(page)}>{page}</a>
+              </li>
+            )
+          }
           <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-            <a onClick={() => this.setPage(pager.currentPage + 1)}>Next</a>
+            <a onClick={() => this.props.changePage(pager.currentPage + 1)}>Next</a>
           </li>
           <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-            <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
+            <a onClick={() => this.props.changePage(pager.totalPages)}>Last</a>
           </li>
         </ul>
       </div>
@@ -127,8 +107,8 @@ class Pagination extends React.Component {
 }
 
 Pagination.propTypes = {
-  items: PropTypes.array.isRequired,
-  onChangePage: PropTypes.func.isRequired,
+  //items: PropTypes.array.isRequired,
+  //onChangePage: PropTypes.func.isRequired,
   initialPage: PropTypes.number,
   currentPage: PropTypes.number
 };

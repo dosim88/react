@@ -33,3 +33,8 @@ export function postsLike(id) {
     }
   };
 }
+
+export const changePage = (pageNumber) => ({
+  type: types.POSTS_CHANGE_PAGE,
+  pageNumber
+});
