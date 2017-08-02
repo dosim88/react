@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import browserHistory from 'helpers/browserHistory';
 
-import Image from 'components/ui/image';
-import TextBox from 'components/ui/textBox';
-import Meta from 'components/ui/meta';
-import Like from 'components/ui/like';
+import Image from 'components/ui/Image';
+import TextBox from 'components/ui/TextBox';
+import Meta from 'components/ui/Meta';
+import Like from 'components/ui/Like';
 
 import { posts } from 'helpers/routes';
 

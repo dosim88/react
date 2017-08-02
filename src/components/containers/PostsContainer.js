@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import BlogList from 'components/views/blogList';
+import BlogList from 'components/views/BlogList';
 import { postsLike, changePage } from 'actions/posts';
 
 import { POSTS_ON_PAGE } from 'constants/pagination';

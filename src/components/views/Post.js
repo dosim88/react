@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import BlogItem from 'components/views/blogItem';
+import BlogItem from 'components/views/BlogItem';
 
 
 const Post = ({ post, handleLike }) => (

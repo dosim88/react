@@ -11,10 +11,10 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
 import store from 'store';
-import MainLayout from 'components/layouts/mainLayout';
+import MainLayout from 'components/layouts/MainLayout';
 import routes from 'routes';
 import prepareData from 'helpers/prepareData';
-import DevTools from 'components/containers/devTools';
+import DevTools from 'components/containers/DevTools';
 import browserHistory from 'helpers/browserHistory';
 
 

@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { map } from 'lodash';
 
-import BlogItem from 'components/views/blogItem';
-import PieChart from 'components/ui/pieChart';
-import Pagination from 'components/ui/pagination';
+import BlogItem from 'components/views/BlogItem';
+import PieChart from 'components/ui/PieChart';
+import Pagination from 'components/ui/Pagination';
 
 const BlogList = ({ posts, postsOnPage, currentPage, changePage, handleLike }) => (
   <div className="container">
