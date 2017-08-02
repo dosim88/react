@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import _ from 'lodash';
+import { map } from 'lodash';
 
 import { Provider } from 'react-redux';
 import { matchPath } from 'react-router';
@@ -19,7 +19,7 @@ import browserHistory from 'helpers/browserHistory';
 
 
 function historyCb(location) {
-  _.map(
+  map(
     routes,
     route => {
       const match = matchPath(location.pathname, route);

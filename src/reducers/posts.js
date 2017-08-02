@@ -1,8 +1,7 @@
 import { assign } from 'lodash/object';
+import { cloneDeep, findIndex } from 'lodash';
 
 import * as types from 'constants/actionTypes/postsActionTypes';
-
-import _ from 'lodash';
 
 const initialState = {
   isFetching: false,
@@ -22,9 +21,9 @@ export default function(state = initialState, action) {
     case types.POSTS_LIKE_ERROR:
       return assign({}, state, { error: true });
     case types.POSTS_LIKE_SUCCESS: {
-      const entries = _.cloneDeep(state.entries);
+      const entries = cloneDeep(state.entries);
       const { id } = action.response;
-      const index = _.findIndex(entries, entry => entry.id == id);
+      const index = findIndex(entries, entry => entry.id == id);
 
       entries[index] = action.response;
 

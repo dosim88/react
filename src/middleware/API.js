@@ -2,7 +2,7 @@
 
 import request from 'superagent';
 
-import _ from 'lodash';
+import { assign, pick } from 'lodash';
 
 import { stringify } from 'qs';
 
@@ -29,7 +29,7 @@ function APICall({ endpoint, method, query, payload }) {
 export const API_CALL = 'API_CALL';
 
 const nextAction = (action, data) => (
-  _.assign({}, action, data, { [API_CALL]: undefined })
+  assign({}, action, data, { [API_CALL]: undefined })
 );
 
 export default store => next => action => {
@@ -41,7 +41,7 @@ export default store => next => action => {
   next(nextAction(action, { type: requestType }));
 
   const promise = APICall(
-    _.pick(action[API_CALL], ['endpoint', 'method', 'query', 'payload'])
+    pick(action[API_CALL], ['endpoint', 'method', 'query', 'payload'])
   );
 
   promise.then(

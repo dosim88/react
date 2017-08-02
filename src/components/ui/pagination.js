@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
+import { range } from 'lodash';
 
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
 const Pagination = ({ items, currentPage, changePage }) => {
   const totalPages = Math.ceil(items.length / POSTS_ON_PAGE);
-  const pages = _.range(1, totalPages + 1);
+  const pages = range(1, totalPages + 1);
 
   if (!pages) return null;
 

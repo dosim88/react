@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import _ from 'lodash';
+import { map } from 'lodash';
 
 import BlogItem from 'components/views/blogItem';
 import PieChart from 'components/ui/pieChart';
@@ -10,7 +10,7 @@ const BlogList = ({ posts, postsOnPage, currentPage, changePage, handleLike }) =
     <div className="row">
       <div className="col-md-6">
         {
-          _.map(postsOnPage, (post) => (
+          map(postsOnPage, (post) => (
             <BlogItem
               key={post.id}
               post={post}
