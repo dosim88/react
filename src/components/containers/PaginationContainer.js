@@ -4,7 +4,7 @@ import Pagination from 'components/ui/Pagination';
 import { changePage } from 'actions/posts';
 
 
-const stateToProps = (state) =>({
+const stateToProps = (state) => ({
   count: state.posts.entries.length,
   currentPage: state.posts.currentPage
 });

@@ -2,19 +2,19 @@ import React, { PropTypes } from 'react';
 import { map } from 'lodash';
 
 import BlogItem from 'components/views/BlogItem';
-import PieChart from 'components/ui/PieChart';
+import PieChartContainer from 'components/containers/PieChartContainer';
 import PaginationContainer from 'components/containers/PaginationContainer';
 
-const BlogList = ({ posts, postsOnPage, handleLike }) => (
+const BlogList = ({ posts, handleLike }) => (
   <div className="container">
     <div className="row">
       <div className="col-md-6">
         {
-          map(postsOnPage, (post) => (
+          map(posts, (post) => (
             <BlogItem
               key={post.id}
               post={post}
-              handleLike={ () => handleLike(post.id, posts) }
+              handleLike={ () => handleLike(post.id) }
             />
           ))
         }
@@ -23,11 +23,7 @@ const BlogList = ({ posts, postsOnPage, handleLike }) => (
       </div>
 
       <div className="col-md-6">
-        <PieChart columns={
-          posts.map(
-            post => [ post.text, post.meta.likesCount ]
-          )}
-        />
+        <PieChartContainer />
       </div>
 
     </div>

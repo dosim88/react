@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import BlogList from 'components/views/BlogList';
-import { postsLike, changePage } from 'actions/posts';
+import { postsLike } from 'actions/posts';
 
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
@@ -13,10 +13,9 @@ function filterPostsByPage(posts, currentPage = 1) {
 }
 
 const stateToProps = (state) => ({
-  posts: state.posts.entries,
+  posts: filterPostsByPage(state.posts.entries, state.posts.currentPage),
   isFetching: state.posts.isFetching,
-  error: state.posts.error,
-  postsOnPage: filterPostsByPage(state.posts.entries, state.posts.currentPage)
+  error: state.posts.error
 });
 
 const actionsToProps = (dispatch) => ({
