@@ -3,9 +3,9 @@ import { map } from 'lodash';
 
 import BlogItem from 'components/views/BlogItem';
 import PieChart from 'components/ui/PieChart';
-import Pagination from 'components/ui/Pagination';
+import PaginationContainer from 'components/containers/PaginationContainer';
 
-const BlogList = ({ posts, postsOnPage, currentPage, changePage, handleLike }) => (
+const BlogList = ({ posts, postsOnPage, handleLike }) => (
   <div className="container">
     <div className="row">
       <div className="col-md-6">
@@ -19,7 +19,7 @@ const BlogList = ({ posts, postsOnPage, currentPage, changePage, handleLike }) =
           ))
         }
 
-        <Pagination items={posts} currentPage={currentPage} changePage={changePage}/>
+        <PaginationContainer />
       </div>
 
       <div className="col-md-6">

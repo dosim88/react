@@ -3,8 +3,8 @@ import { range } from 'lodash';
 
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
-const Pagination = ({ items, currentPage, changePage }) => {
-  const totalPages = Math.ceil(items.length / POSTS_ON_PAGE);
+const Pagination = ({ count, currentPage, changePage }) => {
+  const totalPages = Math.ceil(count / POSTS_ON_PAGE);
   const pages = range(1, totalPages + 1);
 
   if (!pages) return null;
@@ -37,13 +37,13 @@ const Pagination = ({ items, currentPage, changePage }) => {
 };
 
 Pagination.propTypes = {
-  items: PropTypes.array,
+  count: PropTypes.number,
   currentPage: PropTypes.number,
   changePage: PropTypes.func.isRequired
 };
 
 Pagination.defaultProps = {
-  items: [],
+  count: 0,
   currentPage: 1
 };
 

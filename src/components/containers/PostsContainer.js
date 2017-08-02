@@ -16,16 +16,12 @@ const stateToProps = (state) => ({
   posts: state.posts.entries,
   isFetching: state.posts.isFetching,
   error: state.posts.error,
-  currentPage: state.posts.currentPage,
   postsOnPage: filterPostsByPage(state.posts.entries, state.posts.currentPage)
 });
 
 const actionsToProps = (dispatch) => ({
   handleLike(postId) {
     dispatch(postsLike(postId));
-  },
-  changePage(pageNumber) {
-    dispatch(changePage(pageNumber));
   }
 });
 

@@ -2,12 +2,11 @@ import * as types from 'constants/actionTypes/postsActionTypes';
 
 import { API_CALL } from 'middleware/API';
 
-import { index, like } from 'helpers/routes';
 
 export function fetchPosts() {
   return {
     [API_CALL]: {
-      endpoint: index,
+      endpoint: '/',
       method: 'GET',
       query: {},
       types: [
@@ -22,7 +21,7 @@ export function fetchPosts() {
 export function postsLike(id) {
   return {
     [API_CALL]: {
-      endpoint: like(id),
+      endpoint: `/posts/${id}/like`,
       method: 'PUT',
       query: {},
       types: [
