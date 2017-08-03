@@ -1,7 +1,8 @@
 import { assign } from 'lodash/object';
 import { cloneDeep, findIndex } from 'lodash';
 
-import * as types from 'constants/actionTypes/postsActionTypes';
+import * as posts from 'constants/actionTypes/postsActionTypes';
+import * as like from 'constants/actionTypes/likeActionTypes';
 
 const initialState = {
   isFetching: false,
@@ -12,15 +13,15 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case types.FETCH_POSTS_REQUEST:
+    case posts.FETCH_POSTS_REQUEST:
       return assign({}, state, { isFetching: true });
-    case types.FETCH_POSTS_ERROR:
+    case posts.FETCH_POSTS_ERROR:
       return assign({}, state, { error: true });
-    case types.FETCH_POSTS_SUCCESS:
+    case posts.FETCH_POSTS_SUCCESS:
       return assign({}, state, { entries: action.response });
-    case types.POSTS_LIKE_ERROR:
+    case like.POST_LIKE_ERROR:
       return assign({}, state, { error: true });
-    case types.POSTS_LIKE_SUCCESS: {
+    case like.POST_LIKE_SUCCESS: {
       const entries = cloneDeep(state.entries);
       const { id } = action.response;
       const index = findIndex(entries, entry => entry.id == id);
@@ -29,7 +30,7 @@ export default function(state = initialState, action) {
 
       return assign({}, state, {entries});
     }
-    case types.POSTS_CHANGE_PAGE:
+    case posts.POSTS_CHANGE_PAGE:
       return assign({}, state, { currentPage: action.pageNumber });
     default:
       return state;

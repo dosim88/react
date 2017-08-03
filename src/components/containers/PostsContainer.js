@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import BlogList from 'components/views/BlogList';
-import { postsLike } from 'actions/posts';
+import { postLike } from 'actions/like';
 
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
@@ -20,7 +20,7 @@ const stateToProps = (state) => ({
 
 const actionsToProps = (dispatch) => ({
   handleLike(postId) {
-    dispatch(postsLike(postId));
+    dispatch(postLike(postId));
   }
 });
 
