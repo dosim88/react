@@ -5,11 +5,11 @@ import browserHistory from 'helpers/browserHistory';
 import Image from 'components/ui/Image';
 import TextBox from 'components/ui/TextBox';
 import Meta from 'components/ui/Meta';
-import Like from 'components/ui/Like';
+import LikeContainer from 'components/containers/LikeContainer';
 
 import { posts } from 'helpers/routes';
 
-const BlogItem = ({ post, handleLike }) => (
+const BlogItem = ({ post }) => (
   <div className='blog-item text-center'>
     <div className="row">
       <TextBox>
@@ -32,7 +32,7 @@ const BlogItem = ({ post, handleLike }) => (
     </div>
 
     <div className="row">
-      <Like {...{handleLike}} />
+      <LikeContainer postId={post.id} />
     </div>
   </div>
 );
@@ -43,8 +43,7 @@ BlogItem.propTypes = {
     meta: PropTypes.shape(Meta.propTypes),
     text: PropTypes.string,
     id: PropTypes.number
-  }),
-  handleLike: PropTypes.func
+  })
 };
 
 export default BlogItem;

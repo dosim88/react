@@ -3,9 +3,9 @@ import React, { PropTypes } from 'react';
 import BlogItem from 'components/views/BlogItem';
 
 
-const Post = ({ post, handleLike }) => (
+const Post = ({ post }) => (
   post
-    ? <BlogItem key={post.id} post={post} handleLike={ () => handleLike(post.id) } />
+    ? <BlogItem key={post.id} post={post} />
     : null
 );
 

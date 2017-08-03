@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
 
 import BlogList from 'components/views/BlogList';
-import { postLike } from 'actions/like';
-
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
 function filterPostsByPage(posts, currentPage = 1) {
@@ -18,10 +16,5 @@ const stateToProps = (state) => ({
   error: state.posts.error
 });
 
-const actionsToProps = (dispatch) => ({
-  handleLike(postId) {
-    dispatch(postLike(postId));
-  }
-});
 
-export default connect(stateToProps, actionsToProps)(BlogList);
+export default connect(stateToProps)(BlogList);

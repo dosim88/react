@@ -5,17 +5,13 @@ import BlogItem from 'components/views/BlogItem';
 import PieChartContainer from 'components/containers/PieChartContainer';
 import PaginationContainer from 'components/containers/PaginationContainer';
 
-const BlogList = ({ posts, handleLike }) => (
+const BlogList = ({ posts }) => (
   <div className="container">
     <div className="row">
       <div className="col-md-6">
         {
           map(posts, (post) => (
-            <BlogItem
-              key={post.id}
-              post={post}
-              handleLike={ () => handleLike(post.id) }
-            />
+            <BlogItem key={post.id} post={post} />
           ))
         }
 
