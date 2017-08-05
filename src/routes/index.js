@@ -1,7 +1,7 @@
-import PostsContainer from 'components/containers/postsContainer';
-import PostContainer from 'components/containers/postContainer';
+import PostsContainer from 'components/containers/PostsContainer';
+import PostContainer from 'components/containers/PostContainer';
 
-import About from 'components/views/about';
+import About from 'components/views/About';
 
 import { index, posts, about } from 'helpers/routes';
 
