@@ -1,17 +1,17 @@
-var path = require('path');
-var webpack = require('webpack');
-var root = path.join(process.cwd(), 'src');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const root = path.join(process.cwd(), 'src');
+
+export default {
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
+    'webpack-hot-middleware/client',
     './src/index.js'
   ],
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(process.cwd(), 'dist'),
     publicPath: '/assets/',
     filename: 'bundle.js'
   },
@@ -47,8 +47,13 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      __SERVER__: false,
+      __CLIENT__: true,
+      __DEVELOPMENT__: true
+    }),
     new webpack.HotModuleReplacementPlugin()
   ],
 
-  devtool: "source-map"
+  devtool: 'source-map'
 };
