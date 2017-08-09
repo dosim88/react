@@ -11,7 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
 import createStore from 'store';
-import MainLayout from 'components/layouts/MainLayout';
+import MainLayout from 'components/layouts/mainLayout/index';
 import routes from 'routes';
 import prepareData from 'helpers/prepareData';
 import DevTools from 'components/containers/DevTools';

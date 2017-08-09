@@ -9,7 +9,7 @@ import url from 'url';
 import { parse } from 'qs';
 import { map, compact } from 'lodash';
 
-import MainLayout from 'components/layouts/MainLayout';
+import MainLayout from 'components/layouts/mainLayout/index';
 import createStore from 'store';
 import routes from 'routes';
 
