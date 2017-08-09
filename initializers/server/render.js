@@ -9,6 +9,8 @@ import url from 'url';
 import { parse } from 'qs';
 import { map, compact } from 'lodash';
 
+import Helmet from 'react-helmet';
+
 import MainLayout from 'components/layouts/mainLayout/index';
 import createStore from 'store';
 import routes from 'routes';
@@ -81,10 +83,12 @@ export default (req, res) => {
       </Provider>
     );
 
+    const head = Helmet.rewind();
+
     res.status(200);
     res.render(
       'index',
-      { initialState, content }
+      { initialState, content, head }
     );
   });
 }
