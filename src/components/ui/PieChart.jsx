@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 class PieChart extends React.Component {
   componentDidMount() {
-    if(!__CLIENT__) return;
+    if(!__CLIENT__) return; // eslint-disable-line
 
     const c3 = require('c3');
 

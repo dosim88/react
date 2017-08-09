@@ -32,7 +32,7 @@ const Home = ({ posts }) => (
   </div>
 );
 
-BlogList.propTypes = {
+Home.propTypes = {
   posts: PropTypes.array
 };
 
