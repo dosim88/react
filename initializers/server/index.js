@@ -8,7 +8,6 @@ require.extensions['.css'] = () => {
   return;
 };
 
-const host = 'localhost';
 const port = 3000;
 
 const express = require('express');

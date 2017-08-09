@@ -6,9 +6,10 @@
     </head>
     <body>
 
-    <div id='app'><h2>Hello world</h2></div>
+    <div id='app'><%- content %>></div>
     <div id='devtools'></div>
 
+    <script type="text/javascript">window.__INITIAL_STATE__ = <%- initialState %></script>
     <script src="/assets/bundle.js"></script>
     </body>
 </html>

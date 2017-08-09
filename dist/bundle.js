@@ -41684,7 +41684,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/helpers/browserHistory.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/helpers/history.js');
 }();
 
 ;

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import browserHistory from 'helpers/browserHistory';
+import history from 'helpers/history';
 
 import Image from 'components/ui/Image';
 import TextBox from 'components/ui/TextBox';
@@ -14,7 +14,7 @@ const BlogItem = ({ post }) => (
     <div className="row">
       <TextBox>
         {
-          browserHistory.location.pathname == posts(post.id)
+          history.location.pathname == posts(post.id)
             ? <div>{post.text}</div>
             : <Link to={posts(post.id)}> {post.text} </Link>
         }
