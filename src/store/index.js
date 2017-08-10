@@ -6,8 +6,9 @@ import DevTools from 'components/containers/DevTools';
 
 import reducers from 'reducers';
 
-const store = createStore(
+const store = (initialState) => createStore(
   reducers,
+  initialState,
   compose(
     applyMiddleware(APIMiddleware, thunk),
     DevTools.instrument()

@@ -41684,7 +41684,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/helpers/browserHistory.js');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/helpers/history.js');
 }();
 
 ;
@@ -102078,9 +102078,9 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(About, 'About', '/home/dosim/www-data/react/src/components/views/About.jsx');
+  __REACT_HOT_LOADER__.register(About, 'About', '/home/dosim/www-data/react/src/components/views/index.jsx');
 
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/components/views/About.jsx');
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/dosim/www-data/react/src/components/views/index.jsx');
 }();
 
 ;

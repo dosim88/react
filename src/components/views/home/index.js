@@ -1,19 +1,25 @@
 import React, { PropTypes } from 'react';
-import { map } from 'lodash';
 
-import BlogItem from 'components/views/BlogItem';
+import BlogList from 'components/views/home/BlogList';
 import PieChartContainer from 'components/containers/PieChartContainer';
 import PaginationContainer from 'components/containers/PaginationContainer';
 
-const BlogList = ({ posts }) => (
+import Helmet from 'react-helmet';
+
+const Home = ({ posts }) => (
   <div className="container">
+    {
+      <Helmet
+        title='Home'
+        meta={[
+          { name: 'description', content: 'Blog home page' },
+          { name: 'keywords', content: 'Blog, posts, home' }
+        ]}
+      />
+    }
     <div className="row">
       <div className="col-md-6">
-        {
-          map(posts, (post) => (
-            <BlogItem key={post.id} post={post} />
-          ))
-        }
+        <BlogList posts={posts} />
 
         <PaginationContainer />
       </div>
@@ -26,12 +32,8 @@ const BlogList = ({ posts }) => (
   </div>
 );
 
-BlogList.propTypes = {
-  posts: PropTypes.array,
-  postsOnPage: PropTypes.array,
-  currentPage: PropTypes.number,
-  changePage: PropTypes.func,
-  handleLike: PropTypes.func
+Home.propTypes = {
+  posts: PropTypes.array
 };
 
-export default BlogList;
+export default Home;

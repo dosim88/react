@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import BlogList from 'components/views/BlogList';
+import Home from 'components/views/home/index';
 import { POSTS_ON_PAGE } from 'constants/pagination';
 
 function filterPostsByPage(posts, currentPage = 1) {
@@ -17,4 +17,4 @@ const stateToProps = (state) => ({
 });
 
 
-export default connect(stateToProps)(BlogList);
+export default connect(stateToProps)(Home);
