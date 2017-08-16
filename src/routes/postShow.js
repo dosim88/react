@@ -14,4 +14,4 @@ export default {
     if (initialLoad() || !params.id) return;
     return store.dispatch(fetchPost(params.id));
   }
-}
+};

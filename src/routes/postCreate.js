@@ -7,4 +7,4 @@ export default {
   path: postCreate(),
   component: PostCreateContainer,
   prepareData: () => {}
-}
+};

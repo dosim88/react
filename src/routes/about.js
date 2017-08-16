@@ -6,4 +6,4 @@ export default {
   path: about(),
   component: About,
   prepareData: () => {}
-}
+};

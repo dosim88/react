@@ -14,4 +14,4 @@ export default {
     if (initialLoad()) return;
     return store.dispatch(fetchPosts());
   }
-}
+};

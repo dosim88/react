@@ -6,4 +6,4 @@ export default {
   path: contacts(),
   component: Contacts,
   prepareData: () => {}
-}
+};

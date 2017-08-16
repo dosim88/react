@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { connect } from 'react-redux';
 
 import PostCreate from 'components/views/postCreate/index';
