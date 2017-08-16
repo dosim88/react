@@ -36,9 +36,9 @@ class ContactForm extends React.Component {
   }
 
   validation(values) {
-    let errors = {};
+    const errors = {};
 
-    for(let k in values) {
+    for (const k in values) {
       if (values[k].length <= 0)
         errors[k] = 'Поле обязательно для заполнения';
     }

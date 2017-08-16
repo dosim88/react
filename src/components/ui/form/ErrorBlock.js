@@ -10,5 +10,9 @@ const ErrorBlock = ({ message }) => {
   );
 };
 
+ErrorBlock.propTypes = {
+  message: PropTypes.string
+};
+
 export default ErrorBlock;
 

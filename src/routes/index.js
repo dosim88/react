@@ -3,7 +3,7 @@ import PostContainer from 'components/containers/PostContainer';
 
 import About from 'components/views/about/index';
 import Contacts from 'components/views/contacts/index';
-import PostEdit from 'components/views/postEdit/index';
+import PostEditContainer from 'components/containers/PostEditContainer';
 
 import { index, posts, about, contacts, postEdit } from 'helpers/routes';
 
@@ -44,8 +44,11 @@ export default [
   },
   {
     path: postEdit(),
-    component: PostEdit,
-    prepareData: () => {}
+    component: PostEditContainer,
+    prepareData: (store, query, params) => {
+      if (initialLoad() || !params.id) return;
+      return store.dispatch(fetchPost(params.id));
+    }
   }
 ];
 

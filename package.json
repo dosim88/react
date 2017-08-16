@@ -4,7 +4,7 @@
   "description": "React. Базовый уровень. Thinknetica",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src --ext js,jsx"
   },
   "repository": {
     "type": "git",
