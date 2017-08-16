@@ -20,7 +20,7 @@ const PostEditForm = ({ handleSubmit, pristine, submitting, reset }) => (
 
 
 PostEditForm.propTypes = {
-  handleSubmit: PropTypes.object,
+  handleSubmit: PropTypes.func,
   pristine: PropTypes.bool,
   submitting: PropTypes.bool,
   reset: PropTypes.func

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import PostEdit from 'components/views/postEdit/index';
+import PostCreate from 'components/views/postCreate/index';
 import { reduxForm } from 'redux-form';
 
 
@@ -8,7 +8,7 @@ const validate = (values) => {
   const errors = {};
 
   for (const k in values) {
-    if (values[k].leng0th <= 0)
+    if (values[k].length <= 0)
       errors[k] = 'Поле обязательно для заполнения';
   }
 
@@ -19,17 +19,18 @@ const submit = (values) => {
   alert(JSON.stringify(values));
 };
 
+
 export default connect(
   (state) => ({
     initialValues: {
-      title: state.post.entry && state.post.entry.title,
-      author: state.post.entry && state.post.entry.meta.author,
-      createdAt: state.post.entry && state.post.entry.meta.createdAt
+      title: '',
+      imageSrc: '',
+      imageAlt: '',
+      author: ''
     }
   })
 )(reduxForm({
-  form: 'editPost',
+  form: 'createPost',
   validate,
-  onSubmit: submit,
-  enableReinitialize: true
-})(PostEdit));
+  onSubmit: submit
+})(PostCreate));
