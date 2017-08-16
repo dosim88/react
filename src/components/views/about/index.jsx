@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 const About = () => (
   <div>
+    <h3>Описание блога</h3>
     <Helmet
       title='About'
       meta={[
@@ -11,7 +12,6 @@ const About = () => (
         { name: 'keywords', content: 'Blog, description, about' }
       ]}
     />
-    Description of my blog...
   </div>
 );
 

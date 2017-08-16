@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
 import Header from 'components/layouts/mainLayout/Header';
-import GoBackButton from 'components/layouts/mainLayout/GoBackButton';
+import Navigation from 'components/layouts/mainLayout/Navigation';
 import Footer from 'components/layouts/mainLayout/Footer';
 
 const MainLayout = ({ children }) => (
   <div className='container'>
     <Header />
-    <GoBackButton />
+    <Navigation />
     {children}
     <Footer />
   </div>

@@ -8,7 +8,7 @@ const validate = (values) => {
   const errors = {};
 
   for (const k in values) {
-    if (values[k].leng0th <= 0)
+    if (values[k].length <= 0)
       errors[k] = 'Поле обязательно для заполнения';
   }
 
