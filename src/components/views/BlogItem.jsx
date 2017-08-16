@@ -15,8 +15,8 @@ const BlogItem = ({ post }) => (
       <TextBox>
         {
           history.location.pathname == posts(post.id)
-            ? <div>{post.text}</div>
-            : <Link to={posts(post.id)}> {post.text} </Link>
+            ? <div>{post.title}</div>
+            : <Link to={posts(post.id)}> {post.title} </Link>
         }
       </TextBox>
     </div>
@@ -41,7 +41,7 @@ BlogItem.propTypes = {
   post: PropTypes.shape({
     image:  PropTypes.shape(Image.propTypes),
     meta: PropTypes.shape(Meta.propTypes),
-    text: PropTypes.string,
+    title: PropTypes.string,
     id: PropTypes.number
   })
 };

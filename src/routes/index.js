@@ -2,8 +2,10 @@ import PostsContainer from 'components/containers/PostsContainer';
 import PostContainer from 'components/containers/PostContainer';
 
 import About from 'components/views/about/index';
+import Contacts from 'components/views/contacts/index';
+import PostEdit from 'components/views/postEdit/index';
 
-import { index, posts, about } from 'helpers/routes';
+import { index, posts, about, contacts, postEdit } from 'helpers/routes';
 
 import { fetchPosts } from 'actions/posts';
 import { fetchPost } from 'actions/post';
@@ -22,6 +24,7 @@ export default [
     }
   },
   {
+    exact: true,
     path: posts(),
     component: PostContainer,
     prepareData: (store, query, params) => {
@@ -32,6 +35,16 @@ export default [
   {
     path: about(),
     component: About,
+    prepareData: () => {}
+  },
+  {
+    path: contacts(),
+    component: Contacts,
+    prepareData: () => {}
+  },
+  {
+    path: postEdit(),
+    component: PostEdit,
     prepareData: () => {}
   }
 ];
