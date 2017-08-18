@@ -7,7 +7,7 @@ import TextBox from 'components/ui/TextBox';
 import Meta from 'components/ui/Meta';
 import LikeContainer from 'components/containers/LikeContainer';
 
-import { posts } from 'helpers/routes';
+import { posts, postEdit } from 'helpers/routes';
 
 const BlogItem = ({ post }) => (
   <div className='blog-item text-center'>
@@ -15,8 +15,8 @@ const BlogItem = ({ post }) => (
       <TextBox>
         {
           history.location.pathname == posts(post.id)
-            ? <div>{post.text}</div>
-            : <Link to={posts(post.id)}> {post.text} </Link>
+            ? <div>{post.title}</div>
+            : <Link to={posts(post.id)}> {post.title} </Link>
         }
       </TextBox>
     </div>
@@ -33,6 +33,7 @@ const BlogItem = ({ post }) => (
 
     <div className="row">
       <LikeContainer postId={post.id} />
+      <Link to={postEdit(post.id)}>Edit</Link>
     </div>
   </div>
 );
@@ -41,7 +42,7 @@ BlogItem.propTypes = {
   post: PropTypes.shape({
     image:  PropTypes.shape(Image.propTypes),
     meta: PropTypes.shape(Meta.propTypes),
-    text: PropTypes.string,
+    title: PropTypes.string,
     id: PropTypes.number
   })
 };

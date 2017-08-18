@@ -1,38 +1,16 @@
-import PostsContainer from 'components/containers/PostsContainer';
-import PostContainer from 'components/containers/PostContainer';
-
-import About from 'components/views/about/index';
-
-import { index, posts, about } from 'helpers/routes';
-
-import { fetchPosts } from 'actions/posts';
-import { fetchPost } from 'actions/post';
-
-import initialLoad from 'helpers/initialLoad';
-
+import home from 'routes/home';
+import postShow from 'routes/postShow';
+import about from 'routes/about';
+import contacts from 'routes/contacts';
+import postEdit from 'routes/postEdit';
+import postCreate from 'routes/postCreate';
 
 export default [
-  {
-    exact: true,
-    path: index,
-    component: PostsContainer,
-    prepareData: (store) => {
-      if (initialLoad()) return;
-      return store.dispatch(fetchPosts());
-    }
-  },
-  {
-    path: posts(),
-    component: PostContainer,
-    prepareData: (store, query, params) => {
-      if (initialLoad() || !params.id) return;
-      return store.dispatch(fetchPost(params.id));
-    }
-  },
-  {
-    path: about(),
-    component: About,
-    prepareData: () => {}
-  }
+  home,
+  postShow,
+  about,
+  contacts,
+  postEdit,
+  postCreate
 ];
 
