@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react';
 import { range } from 'lodash';
 
-import { POSTS_ON_PAGE } from 'constants/pagination';
-
-const Pagination = ({ count, currentPage, changePage }) => {
-  const totalPages = Math.ceil(count / POSTS_ON_PAGE);
+const Pagination = ({ currentPage, totalPages, changePage }) => {
   const pages = range(1, totalPages + 1);
 
   if (!pages) return null;
@@ -19,11 +16,11 @@ const Pagination = ({ count, currentPage, changePage }) => {
           <a onClick={() => changePage(currentPage - 1)}>Previous</a>
         </li>
         {
-          pages.map((page, index) =>
+          pages.map((page, index) => (
             <li key={index} className={currentPage === page ? 'active' : ''}>
               <a onClick={() => changePage(page)}>{page}</a>
             </li>
-          )
+          ))
         }
         <li className={currentPage === totalPages ? 'disabled' : ''}>
           <a onClick={() => changePage(currentPage + 1)}>Next</a>
@@ -37,13 +34,12 @@ const Pagination = ({ count, currentPage, changePage }) => {
 };
 
 Pagination.propTypes = {
-  count: PropTypes.number,
   currentPage: PropTypes.number,
+  totalPages: PropTypes.number,
   changePage: PropTypes.func.isRequired
 };
 
 Pagination.defaultProps = {
-  count: 0,
   currentPage: 1
 };
 

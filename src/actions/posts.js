@@ -3,12 +3,11 @@ import * as posts from 'constants/actionTypes/postsActionTypes';
 import { API_CALL } from 'middleware/API';
 
 
-export function fetchPosts() {
+export function fetchPosts(page) {
   return {
     [API_CALL]: {
-      endpoint: '/',
+      endpoint: `/pages/${page || 1}`,
       method: 'GET',
-      query: {},
       types: [
         posts.FETCH_POSTS_REQUEST,
         posts.FETCH_POSTS_SUCCESS,
@@ -17,8 +16,3 @@ export function fetchPosts() {
     }
   };
 }
-
-export const changePage = (pageNumber) => ({
-  type: posts.POSTS_CHANGE_PAGE,
-  pageNumber
-});

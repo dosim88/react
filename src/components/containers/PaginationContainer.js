@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
 
 import Pagination from 'components/ui/Pagination';
-import { changePage } from 'actions/posts';
+import history from 'helpers/history';
 
+
+function setPage(pageNumber) {
+  history.push({pathname: `/pages/${pageNumber || 1}`});
+}
 
 const stateToProps = (state) => ({
-  count: state.posts.entries.length,
-  currentPage: state.posts.currentPage
+  currentPage: state.posts.currentPage,
+  totalPages: state.posts.totalPages
 });
 
-const actionsToProps = (dispatch) => ({
-  changePage(pageNumber) {
-    dispatch(changePage(pageNumber));
-  }
+const actionsToProps = () => ({
+  changePage(pageNumber) { setPage(pageNumber); }
 });
 
 export default connect(stateToProps, actionsToProps)(Pagination);

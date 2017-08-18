@@ -1,4 +1,5 @@
 export const index = '/';
+export const pages = (page = ':page') => `/pages/${page}`;
 export const posts = (id = ':id') => `/posts/${id}`;
 export const about = () => '/about';
 export const contacts = () => '/contacts';

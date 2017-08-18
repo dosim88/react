@@ -8,7 +8,8 @@ const initialState = {
   isFetching: false,
   error: false,
   entries: [],
-  currentPage: 1
+  currentPage: 1,
+  totalPages: null
 };
 
 export default function(state = initialState, action) {
@@ -18,7 +19,11 @@ export default function(state = initialState, action) {
     case posts.FETCH_POSTS_ERROR:
       return assign({}, state, { error: true });
     case posts.FETCH_POSTS_SUCCESS:
-      return assign({}, state, { entries: action.response });
+      return assign({}, state, {
+        entries: action.response.entries,
+        currentPage: action.response.currentPage,
+        totalPages: action.response.totalPages
+      });
     case like.POST_LIKE_ERROR:
       return assign({}, state, { error: true });
     case like.POST_LIKE_SUCCESS: {
@@ -30,8 +35,6 @@ export default function(state = initialState, action) {
 
       return assign({}, state, {entries});
     }
-    case posts.POSTS_CHANGE_PAGE:
-      return assign({}, state, { currentPage: action.pageNumber });
     default:
       return state;
   }
