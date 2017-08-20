@@ -1,7 +1,7 @@
 
 #app .blog-item {
   width: 500px;
-  margin: 25px auto;
+  margin: 0px 0px 15px 0px;
   border: 1px solid #c7c7c7;
 }
 #app .blog-item img {
@@ -43,4 +43,15 @@
 
 #app .pagination li {
   cursor: pointer;
+}
+
+#app .search-form-container {
+  border: 1px solid #c7c7c7;
+  padding: 15px;
+  text-align: center;
+}
+
+#app .search-form-container button {
+  width: 50%;
+  margin: 15px 0px 0px 0px;
 }
