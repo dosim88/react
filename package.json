@@ -4,7 +4,9 @@
   "description": "React. Базовый уровень. Thinknetica",
   "main": "index.js",
   "scripts": {
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src --ext js,jsx"
+    "start-dev": "node ./initializers/server/index.js",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src --ext js,jsx",
+    "test": "jest --config jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -19,16 +21,21 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.0",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
     "eslint": "^4.0.0",
     "eslint-plugin-destructuring": "^2.1.0",
     "eslint-plugin-import": "^2.5.0",
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.11.2",
+    "jest": "^20.0.4",
+    "nightmare": "^2.10.0",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-test-renderer": "^15.6.1",
     "redux-devtools": "^3.4.0",
     "redux-devtools-dock-monitor": "^1.1.2",
     "redux-devtools-log-monitor": "^1.3.0",
@@ -42,6 +49,7 @@
     "c3": "^0.4.14",
     "classnames": "^2.2.5",
     "ejs": "^2.5.7",
+    "electron": "^1.7.5",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",

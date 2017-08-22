@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import history from 'helpers/history';
 
 import Image from 'components/ui/Image';
 import TextBox from 'components/ui/TextBox';
@@ -13,11 +12,7 @@ const BlogItem = ({ post }) => (
   <div className='blog-item text-center'>
     <div className="row">
       <TextBox>
-        {
-          history.location.pathname == posts(post.id)
-            ? <div>{post.title}</div>
-            : <Link to={posts(post.id)}> {post.title} </Link>
-        }
+        <Link to={posts(post.id)}>{post.title}</Link>
       </TextBox>
     </div>
 
@@ -45,6 +40,10 @@ BlogItem.propTypes = {
     title: PropTypes.string,
     id: PropTypes.number
   })
+};
+
+BlogItem.defaultProps = {
+  post: {}
 };
 
 export default BlogItem;
