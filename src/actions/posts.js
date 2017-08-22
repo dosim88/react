@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import * as posts from 'constants/actionTypes/postsActionTypes';
 
 import { API_CALL } from 'middleware/API';
