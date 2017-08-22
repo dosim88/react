@@ -2,8 +2,10 @@ import nightmare from 'nightmare';
 import { APP_ROOT } from 'constants/app';
 
 describe('Browser tests', () => {
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
   it('Home page', async () => {
-    let page = nightmare().goto('http:localhost:3000');
+    let page = nightmare().goto(APP_ROOT);
     let text = await page.evaluate(() => (document.body.textContent)).end();
 
     expect(text).toContain("React blog");
