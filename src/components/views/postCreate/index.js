@@ -4,7 +4,7 @@ import PostCreateForm from 'components/views/postCreate/PostCreateForm';
 
 const PostCreate = (props) => (
   <div>
-    <h3>Post Create</h3>
+    <h3>Создание поста</h3>
     <PostCreateForm {...props} />
   </div>
 );

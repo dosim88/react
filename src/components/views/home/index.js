@@ -3,11 +3,12 @@ import React, { PropTypes } from 'react';
 import BlogList from 'components/views/home/BlogList';
 import PieChartContainer from 'components/containers/PieChartContainer';
 import PaginationContainer from 'components/containers/PaginationContainer';
+import SearchFormContainer from 'components/containers/SearchFormContainer';
 
 import Helmet from 'react-helmet';
 
 const Home = ({ posts }) => (
-  <div className="container">
+  <div>
     {
       <Helmet
         title='Home'
@@ -25,6 +26,8 @@ const Home = ({ posts }) => (
       </div>
 
       <div className="col-md-6">
+        <SearchFormContainer />
+
         <PieChartContainer />
       </div>
 
