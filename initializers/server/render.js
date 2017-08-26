@@ -11,6 +11,8 @@ import { map, compact } from 'lodash';
 
 import Helmet from 'react-helmet';
 
+import webpackAsset from './webpackAsset';
+
 import MainLayout from 'components/layouts/mainLayout/index';
 import createStore from 'store';
 import routes from 'routes';
@@ -88,7 +90,7 @@ export default (req, res) => {
     res.status(200);
     res.render(
       'index',
-      { initialState, content, head }
+      { initialState, content, head, webpackAsset }
     );
   });
 }
