@@ -48,6 +48,6 @@ describe('Browser tests', () => {
 
     let text = await page.evaluate(() => document.body.textContent).end();
 
-    expect(text).toContain('post 2 (Predators)');
+    expect(text).toContain('Post Edit');
   });
 });

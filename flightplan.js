@@ -11,7 +11,7 @@ plan.target('production', {
 });
 
 
-plan.local(function() {
+plan.local(function(local) {
   local.log('Start tests');
   local.exec('npm run test');
 
@@ -37,7 +37,6 @@ plan.remote(function(remote) {
   remote.log('Reload application');
   remote.exec('ls -snf ~/' + tmpDir + ' ~/current');
   remote.exec('(cd ~/current && pm2 restart pm2.config.js --env production');
-
 
   remote.log('Finish');
 });
